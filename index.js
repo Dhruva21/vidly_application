@@ -7,7 +7,7 @@ require('./startup/routes')(app); // handling the routes
 require('./startup/db')(); // connect to the database.
 require('./startup/config')();
 require('./startup/validation')(); // joi module to validate the api input to the server.
-
+require('./startup/prod')(app);
 winston.add(new winston.transports.File({ filename : 'logfile.log' }));
 
 const port = process.env.PORT || 3000;
