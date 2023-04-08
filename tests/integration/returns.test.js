@@ -46,7 +46,7 @@ describe('/api/returns', () => {
 
         const res = await request(server)
                             .post('/api/returns')
-                            .send('x-auth-token', token)
+                            .set('x-auth-token', token)
                             .send({ movieId })
         expect(res.status).toBe(400)
      })
@@ -56,7 +56,7 @@ describe('/api/returns', () => {
 
         const res = await request(server)
                             .post('/api/returns')
-                            .send('x-auth-token', token)
+                            .set('x-auth-token', token)
                             .send({ customerId })
         expect(res.status).toBe(400)
      })

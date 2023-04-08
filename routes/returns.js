@@ -6,6 +6,6 @@ router.post('/', async (req, res) => {
     if(!req.body.moveId) return res.status(400).send('movieId not found')
     
     await res.status(401).send('Unauthorized')
-});
+})
 
 module.exports = router;
