@@ -6,6 +6,7 @@ const rentals = require('../routes/rentals')
 const users = require('../routes/users')
 const auth = require('../routes/auth')
 const error = require('../middleware/error')
+const returns = require('../routes/returns')
 
 module.exports = function(app){
     
@@ -28,5 +29,7 @@ module.exports = function(app){
     // auth endpoint
     app.use('/api/auth', auth)
 
+    // returns
+    app.use('/api/returns', returns)
     app.use(error)
 }
